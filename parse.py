@@ -21,7 +21,6 @@ cur_timezone = timezone("Asia/Singapore")
 
 TARTET_NAME =  os.environ.get("TARTET_NAME")
 SUMMARY_PREFIX = os.environ.get("SUMMARY_PREFIX")
-ATTENDEES = os.environ.get("ATTENDEES").split(",")
 
 calendar = Calendar()
 
