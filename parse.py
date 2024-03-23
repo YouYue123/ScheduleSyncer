@@ -11,7 +11,7 @@ load_dotenv()
 
 file_name = "./data.xlsx"
 
-target_tab_name = 'AIM'
+target_tab_name = 'END'
 
 feature_row_index = 1
 
@@ -67,8 +67,7 @@ def add_ho_event(event_name,cur_datetime):
   event.add('summary', SUMMARY_PREFIX + ' ' + event_name)
   event.add('dtstart', datetime(cur_datetime.year, cur_datetime.month,cur_datetime.day,6,0,0,tzinfo=cur_timezone))
   event.add('dtend',  datetime(cur_datetime.year, cur_datetime.month,cur_datetime.day + 1,8,0,0,tzinfo=cur_timezone))
-  for attendee in ATTENDEES:
-    event.add('attendee', vCalAddress(attendee), encode=0)
+
   calendar.add_component(event)
 
 if __name__ == "__main__":
